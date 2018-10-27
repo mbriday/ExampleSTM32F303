@@ -54,8 +54,8 @@ void CANSetup()  {
 	CAN->MCR = CAN_MCR_INRQ | CAN_MCR_NART;	//no mask: all other fields to 0 (reset state).
 	while(!(CAN->MSR & CAN_MSR_INAK));
 	CAN->IER = 0;	//no interrupt enabled.
-	//input clock is PCLK => 64MHz
-	//set baud rate: 500K
+	//input clock is PCLK => 32MHz
+	//set baud rate: 250K
 	// => 128 input clocks /bit.
 	// 1 CAN bit is set to 16 time quantas (tq)
 	// => 1 time quanta each 8 input clock bit.
