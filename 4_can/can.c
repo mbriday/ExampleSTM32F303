@@ -74,7 +74,7 @@ void CANSetup()  {
 	//We just set ABOM (Automatic Bus Off recovery, in case of big pb…)
 	//No mask.
 	CAN->MCR = CAN_MCR_ABOM; 
-	while(CAN->MSR & CAN_MCR_INRQ);	//wait until it is ok.
+	while(CAN->MCR & CAN_MCR_INRQ);	//wait until it is ok.
 	//wait until Transmit box is empty.
 	while(!(CAN->TSR & CAN_TSR_TME0));
 	
